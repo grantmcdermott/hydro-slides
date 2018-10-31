@@ -1,2 +1,1 @@
-# hydro-slides
-Slides for "Hydro power. Market might."
+# Slides for "Hydro power. Market might."
