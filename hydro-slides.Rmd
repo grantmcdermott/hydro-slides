@@ -30,7 +30,7 @@ opts_chunk$set(
 library(RefManageR)
 BibOptions(check.entries = FALSE, bib.style = "authoryear", style = "markdown",
            dashed = TRUE)
-bib <- ReadBib("/home/grant/Dropbox/LaTeX/BiBTeX")
+bib <- ReadBib("/home/grant/Dropbox/LaTeX/BiBTeX/myrefs.bib")
 
 ## Other libraries
 library(tidyverse)
@@ -79,7 +79,6 @@ theme_set(
 ### Why is market power bad?
 --
 count: false
-
 - Econ 101: Deadweight loss b/c dominant firms withhold production. 
 
 --
@@ -88,9 +87,8 @@ count: false
 ### But is this really true?
 --
 count: false
-
 - Remarkably difficult to verify empirically. 
-- Identification is tough...
+- Identification is tough. Requires lots of imposed structure...
   
 ???
 - Identification is hard (especially in a dynamic setting). 
@@ -99,21 +97,21 @@ count: false
 
 --
 count: false
-This paper: Bridge the gap between theory and empirics. 
+### This paper 
+- Identify causal impact of market power on firm behaviour (in reduced-form setting).
+- Bridge the gap between theory and empirics. 
 
 ---
 
 # Approach and contribution
 
-I exploit exogenous variation in the formation of localized electricity markets. 
+### Exogenous formation of localized electricity markets
 - Source: Transmission constraints.
-- Provides a setting in which the *definition* of the market is changing over time.
+- The *definition* of the market is changing over time.
 
-Pair this variation with plant-level data on Norwegian hydropower producers.
-- Hydropower will offer specific empirical advantages (more on this later).
-
-Identify the causal impact of market power on firm behaviour.
-- Do firms withold production when they gain more market power?
+### Plant-level data
+- Norwegian hydropower firms.
+- Hydropower offers specific empirical advantages (more on this later).
 
 ???
 - It's not that firms are entering or exiting a set market. Rather: Changing boundaries of the market *itself* causes variation in competition.
@@ -122,8 +120,8 @@ Identify the causal impact of market power on firm behaviour.
 --
 count: false
 
-**Research questions:**
-  1. Does theory match up with the data? 
+### Research questions
+  1. Do firms withold production when they gain more market power? 
   2. Welfare effects in this market?
   3. Are there environmental consequences?
 
@@ -132,18 +130,16 @@ count: false
 
 # Approach and contribution
 
-I exploit exogenous variation in the formation of localized electricity markets. 
+### Exogenous formation of localized electricity markets
 - Source: Transmission constraints.
-- Provides a setting in which the *definition* of the market is changing over time.
+- The *definition* of the market is changing over time.
 
-Pair this variation with plant-level data on Norwegian hydropower producers.
-- Hydropower will offer specific empirical advantages (more on this later).
+### Plant-level data
+- Norwegian hydropower firms.
+- Hydropower offers specific empirical advantages (more on this later).
 
-Identify the causal impact of market power on firm behaviour.
-- Do firms withold production when they gain more market power?
-
-**Research questions:**
-  1. Does theory match up with the data? (**Yes**)
+### Research questions
+  1. Do firms withold production when they gain more market power? (**Yes**)
   2. Welfare effects in this market? (**Modest, but...**)
   3. Are there environmental consequences? (**Yes**)
 
@@ -155,13 +151,27 @@ class: inverse, center, middle
 
 <html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
 
-(Or: Why should you care about hydropower?)
+(Or: Why should you care?)
 
 ---
 
-# Increasing concern about market power
+# Concerns about market power
 
+Economists (and politicians) increasingly worried about market power.
 
+- Stagnant wages and falling labour productivity shares: `r Citet(bib, c("autor2017superstar", "azar2017concentration", "benmelech2018strong"))`.
+- Slowdown in aggregate output: `r Citet(bib, c("deloecker2017rise"))`. 
+
+Market power appears to be growing across various dimensions.
+- Nationally and globally: `r Citet(bib, c("azar2018concentration", "deloecker2018global"))`.
+- Traditional and nascent markets `r Citet(bib, c("benmelech2018strong", "dube2018monopsony"))`.
+
+--
+count: false
+
+These concerns have very little to say about hydropower (specifically). So why focus on it? 
+
+Well, since you asked...
 
 ---
 
@@ -224,10 +234,6 @@ energy %>%
 - Dispatchable production
 - Homogenous end-good (electricity).
 
-### Producer's decision
-- Driven by the opportunity cost of water.
-- How much to use today vs save for tomorrow?
-    
 ???
 - Can abstract from many of the usual concerns in empirical I/O: MC estimation, product differentiation, branding...
 - Inflows are seasonal (stochastic), but storable.
@@ -239,16 +245,17 @@ energy %>%
 # Literature
 
 ### Theory and other regions 
-- <span style="color:#0c5999">Wolfram (1999)</span>, <span style="color:#0c5999">Joskow and Tirole (2000)</span>, <span style="color:#0c5999">Borenstein et al. (2000, 2002)</span>, <span style="color:#0c5999">Puller (2007)</span>, <span style="color:#0c5999">Reguant (2014)</span>, and <span style="color:#0c5999">Davis and Hausman (2016)</span>.
+
+- `r Citet(bib, c("wolfram1999duopoly", "joskow2000transmission", "borenstein2000competitive", "borenstein2002california", "wolak2003measuring", "musgens2006quantifying", "sweeting2007england", "puller2007pricing", "mansur2007oligopolists", "hortacsu2008strategic", "reguant2014startup", "davis2016nuclear"))`
 - This study: More advantageous research design. Richer variation in market power over longer period of time.
 
 ### Nordic focus
-- <span style="color:#0c5999">Johnsen et al. (1999)</span>, <span style="color:#0c5999">Steen (2004)</span>, <span style="color:#0c5999">Kauppi and Liski (2008)</span>, <span style="color:#0c5999">Fridolfsson and Tangerås (2009)</span> and <span style="color:#0c5999">Mirza and Bergland (2012)</span>.
-- Healthy competition, but with some scope for exercising local market power?
-- Concerns: 1) Lack of firm-level data and 2) Narrow focus (short-run price deviations).
-- My research setting and data are able to overcome these shortcomings. 
+
+- `r Citet(bib, c("johnsen1999zonal", "hjalmarsson2000nordpool", "steen2004bottlenecks", "kauppi2008empirical", "fridolfsson2009market", "mirza2012transmission"))`
+- This study: Overcomes lack of firm-level data and narrow focus (i.e. not just short-run price deviations).
 
 ???
+- General finding of previous literature is one of healthy competition, but with some scope for exercising local market power.
 - Don't need to impose any structure on the data or models, nor do I require simulation and MC estimation.
 - I find direct evidence of strategic, intertemporal firm behaviour over longer periods of time.
 
@@ -265,7 +272,9 @@ name: theory
 
 # Theory
 
-Production in a hydro system is a dynamic optimsation problem.
+Production in a hydro system is a dynamic optimisation problem.
+- How much to use today vs save for tomorrow?
+- Producer's decision is driven by the opportunity cost of water.
 
 ### Competition
 - Equalise prices across periods (*a la* Hotelling).
@@ -1014,51 +1023,6 @@ background-size: 100% 50%
 <i class="fa fa-globe"></i> <a href="http://www.grantmcdermott.com" target="_blank">www.grantmcdermott.com</a></br>
 <i class="fa fa-envelope-square"></i> <a href="mailto:grantmcd@uoregon.edu" target="_blank">grantmcd@uoregon.edu</a></br>
 ]
-
----
-count: false
-name: refs1
-
-# References
-
-- <small>Borenstein, Severin, James Bushnell, and Steven Stoft (2000). "The competitive effects of transmission capacity in a deregulated electricity industry," *RAND Journal of Economics*, 31(2): 294–325.</small>
-- <small>Borenstein, Severin, James B. Bushnell, and Frank A. Wolak (2002). "Measuring Market Inefficiencies in California’s Restructured Wholesale Electricity Market,"" *American Economic Review*, 92(5): 1376–1405.</small>
-- <small>BP (2016). *BP Statistical Review of World Energy*, British Petroleum, 65th edition.</small>
-- <small>Bye, Torstein and Petter Vegard Hansen (2008). "How do Spot prices affect aggregate electricity demand?" Statistics Norway Discussion Papers No. 527. Available: <http://www.ssb.no/a/publikasjoner/pdf/DP/dp527.pdf>. </small>
-- <small>Davis, Lucas and Catherine Hausman (2016). "Market Impacts of a Nuclear Power Plant Closure," *American Economic Journal: Applied Economics*, 8(2): 92–122.</small>
-
----
-count: false
-name: refs2
-
-# References (cont.)
-
-- <small>Førsund, Finn R. (2015). *Hydropower Economics*, International Series in Operations Research and Management Science, Springer, second edition.</small>
-- <small>Fridolfsson, Sven-Olof and Thomas P. Tangerås (2009). "Market power in the Nordic electricity wholesale market: A survey of the empirical evidence," *Energy Policy*, 37(9): 3681-3692.</small>
-- <small>Hansen, Petter Vegard (2004). "Regional electricity spot price responses in Norway," Statistics Norway Discussion Papers No. 2004/13. Available: <http://www.ssb.no/a/english/publikasjoner/pdf/doc_200413_en/doc_200413_en.pdf>.
-</small>
-- <small>Hjalmarsson, Erik (2000). "Nord pool: A power market without market power," Goteborg University. School of Business, Economics and Law. Working Papers in Economics, no. 28. Available: <http://www.ssb.no/a/english/publikasjoner/pdf/doc_200413_en/doc_200413_en.pdf>.</small>
-- <small>Johnsen, Tor Arnt (2001). "Demand, generation and price in the Norwegian market for electric power," *Energy Economics*, 23(3): 227-251.</small>
-
----
-count: false
-name: refs3
-
-# References (cont.)
-
-- <small>Johnsen, Tor Arnt, Shashi Kant Verma, and Catherine D. Wolfram (1999). "Zonal pricing and demand-side bidding in the Norwegian electricity market," Program on Workable Energy Regulation (POWER) working paper series, No. PWP-063. Available: <http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.16.2190&rep=rep1&type=pdf>.</small>
-- <small>Joskow, Paul L. and Jean Tirole (2000). "Transmission rights and market power on electric power networks," *RAND Journal of Economics*, 31(3): 450–487.</small>
-- <small>Kauppi, Olli and Matti Liski (2008). "An Empirical Model of Imperfect Dynamic Competition and Application to Hydroelectricity Storage," MIT-CEEPR WP-2008-012. Available: <http://web.mit.edu/ceepr/www/publications/workingpapers/2008-011.pdf>.</small>
-
----
-count: false
-name: refs4
-
-# References (cont.)
-- <small>Mirza, Faisal Mehmood and Olvar Bergland (2012). "Transmission congestion and market power: the case of the Norwegian electricity market," *The Journal of Energy Markets*, 5(2): 59-88.</small>
-- <small>Puller, Steven L. (2007). "Pricing and firm conduct in California’s deregulated electricity market," *The Review of Economics and Statistics*, 89(1): 75–87.</small>
-- <small>Steen, Frode (2004). "Do bottlenecks generate market power? An empirical study of the Norwegian electricity market," Norwegian School of Economics. Discussion Paper 26/03. Available: <http://www.nhh.no/Files/Filer/institutter/sam/Discussion%20papers/2003/26.pdf>.</small>
-- <small>Wolfram, Catherine D. (1999). "Measuring Duopoly Power in the British Electricity Spot Market," *American Economic Review*, 89(4): 805–826.</small>
 
 ---
 
