@@ -26,6 +26,12 @@ opts_chunk$set(
   echo=F, warning=F, message=F
   )
 
+## Bilbiography
+library(RefManageR)
+BibOptions(check.entries = FALSE, bib.style = "authoryear", style = "markdown",
+           dashed = TRUE)
+bib <- ReadBib("/home/grant/Dropbox/LaTeX/BiBTeX")
+
 ## Other libraries
 library(tidyverse)
 library(lubridate)
@@ -68,19 +74,23 @@ theme_set(
 )
 ```
 
-# Econ 101: Market power
+# Motivation
 
-Why is market power bad?
+### Why is market power bad?
 --
 count: false
 
-- Deadweight loss because dominant firms withhold production. 
+- Econ 101: Deadweight loss b/c dominant firms withhold production. 
 
 --
 count: false
 
-But is this really true?
-- Remarkably hard to find (direct) empirical examples. 
+### But is this really true?
+--
+count: false
+
+- Remarkably difficult to verify empirically. 
+- Identification is tough...
   
 ???
 - Identification is hard (especially in a dynamic setting). 
@@ -89,16 +99,22 @@ But is this really true?
 
 --
 count: false
-This paper: Bridges the gap between pure theory and empirics. 
+This paper: Bridge the gap between theory and empirics. 
 
 ---
 
 # Approach and contribution
 
-- I exploit variation in the formation of localized electricity markets. (Source: Transmission constraints.)
-- Provides a rare setting in which the *definition* of markets are changing over time.
-- I pair this exogenous variation with firm-level data on Norwegian hydropower plants and electricity flows.
-- Identify the causal impact of market power on firm behaviour.
+I exploit exogenous variation in the formation of localized electricity markets. 
+- Source: Transmission constraints.
+- Provides a setting in which the *definition* of the market is changing over time.
+
+Pair this variation with plant-level data on Norwegian hydropower producers.
+- Hydropower will offer specific empirical advantages (more on this later).
+
+Identify the causal impact of market power on firm behaviour.
+- Do firms withold production when they gain more market power?
+
 ???
 - It's not that firms are entering or exiting a set market. Rather: Changing boundaries of the market *itself* causes variation in competition.
 - In so doing, provide an improved correspondence between theory and empirics.
@@ -116,10 +132,15 @@ count: false
 
 # Approach and contribution
 
-- I exploit variation in the formation of localized electricity markets. (Source: Transmission constraints.)
-- Provides a rare setting in which the *definition* of markets are changing over time.
-- I pair this exogenous variation with firm-level data on Norwegian hydropower plants and electricity flows.
-- Identify the causal impact of market power on firm behaviour.
+I exploit exogenous variation in the formation of localized electricity markets. 
+- Source: Transmission constraints.
+- Provides a setting in which the *definition* of the market is changing over time.
+
+Pair this variation with plant-level data on Norwegian hydropower producers.
+- Hydropower will offer specific empirical advantages (more on this later).
+
+Identify the causal impact of market power on firm behaviour.
+- Do firms withold production when they gain more market power?
 
 **Research questions:**
   1. Does theory match up with the data? (**Yes**)
@@ -135,6 +156,12 @@ class: inverse, center, middle
 <html><div style='float:left'></div><hr color='#EB811B' size=1px width=720px></html> 
 
 (Or: Why should you care about hydropower?)
+
+---
+
+# Increasing concern about market power
+
+
 
 ---
 
@@ -158,7 +185,6 @@ energy$form_labs <- factor(energy$form_labs, levels = c("(a) Global primary ener
 
 my_grbu <- c(rep("#BDBDBD", times = 3), brewer.pal(3, "Blues")[2], rep("#BDBDBD", times = 2))
 
-# p <-
 energy %>% 
   filter(!is.na(perc)) %>%
   ggplot(aes(x = factor(type), y = perc/100, fill = factor(type)), color = factor(type)) +  
@@ -183,8 +209,6 @@ energy %>%
     # strip.background = element_rect(fill = "white"), ## Facet strip
     panel.spacing = unit(4, "lines") ## Increase gap between facet panels
     )
-
-#plotly::ggplotly(p)
 
 ```
 
@@ -247,18 +271,18 @@ Production in a hydro system is a dynamic optimsation problem.
 - Equalise prices across periods (*a la* Hotelling).
 
 ### Market power
-- Resource shifting across periods. (Undersupply in more inelastic demand periods. Oversupply in more elastic ones.) 
-  - E.g. [Monopolist case](#monopolist).
+- Shift resources across periods (e.g. [monopolist case](#monopolist)).
+- Undersupply in more inelastic demand periods. Oversupply in more elastic ones.
 
-### Testable implications
-- P's and Q's diverge from their social optimums.
-- Implies an observable difference in reservoir management. 
- - Dominant firms will maintain fuller reservoirs during more inelastic periods than competitors. 
+### Testable implication
+- Dominant firms should maintain fuller reservoirs in inelastic demand periods. 
 
 ???
 - Hotelling arbitrage argument: Prices equalised across periods by producing $\propto$ demand.
 - Although, discounting not really appropriate for hydropower production horizon.
 - General result is robust to various extensions (trade, uncertainty, etc.)
+- P's and Q's diverge from their social optimums.
+- Implies an observable difference in reservoir management. 
 
 ---
 class: inverse, center, middle
