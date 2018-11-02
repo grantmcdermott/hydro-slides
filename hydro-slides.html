@@ -190,11 +190,7 @@ class: inverse, center, middle
 ---
 name: theory
 
-# Theory
-
-Production in a hydro system is a dynamic optimisation problem.
-- How much to use today vs save for tomorrow?
-- Producer's decision is driven by the opportunity cost of water.
+# Production (opportunity cost of water)
 
 ### Competition
 - Equalise prices across periods (*a la* Hotelling).
@@ -207,6 +203,9 @@ Production in a hydro system is a dynamic optimisation problem.
 - Dominant firms should maintain fuller reservoirs in inelastic demand periods. 
 
 ???
+- Production in a hydro system is a dynamic optimisation problem.
+  - How much to use today vs save for tomorrow?
+  - Producer's decision is driven by the opportunity cost of water.
 - Hotelling arbitrage argument: Prices equalised across periods by producing `\(\propto\)` demand.
 - Although, discounting not really appropriate for hydropower production horizon.
 - General result is robust to various extensions (trade, uncertainty, etc.)
@@ -222,17 +221,19 @@ class: inverse, center, middle
 
 ---
 
-# Nord Pool 
+# Nord Pool
 
+### Elspot market(s)
 - Norway liberalised its electricity sector in 1991.
 - By 2000: NOR, SWE, FIN and DNK all part of *Nord Pool*. 
   - The world's first (and still largest) multi-national power exchange.
 - Foundation of Nord Pool is the day-ahead *Elspot* market.
 - Elspot market comprises distinct bidding areas.
-- **NB:** Role of transmission constraints.
-  - Not binding: Common system price in all areas.
-  - Binding: Areas become their own markets.
-- Creates opportunities for exploiting local market power.
+
+### Role of transmission constraints
+- Not binding: Common system price in all areas.
+- Binding: Areas become their own markets.
+  - Creates opportunities for exploiting local market power.
 
 ---
 
@@ -261,11 +262,16 @@ name: sector
 
 # Norwegian electricity sector
 
-- Supply: Hydropower totally dominant (&gt; 95% of total).
-- Demand: Winter double that of summer (heating).
-- However, heating is substitutable (fireplaces, fuels, insulation, clothing) and market fosters consumer responsiveness: variable constracts, [in-house meters](#in-house), etc.
-- Upshot is that summer demand is significantly more *inelastic* than winter (this paper, &lt;span style="color:#0c5999"&gt;Johnsen, 2001&lt;/span&gt;; &lt;span style="color:#0c5999"&gt;Hansen, 2004&lt;/span&gt;; &lt;span style="color:#0c5999"&gt;Bye and Hansen, 2008&lt;/span&gt;).
-- **Implication:** Expect dominant firms to keep fuller reservoirs during summer (as they withhold production relative to competitive firms) and vice versa during winter.
+### Supply
+- Hydropower totally dominant (&gt; 95% of total).
+
+### Demand
+- Winter double that of summer (heating requirements).
+- However, heating is substitutable (fireplaces, fuels, insulation, clothing) and market fosters consumer responsiveness: variable contracts, [in-house meters](#in-house), etc.
+- Upshot is that summer demand is significantly more *inelastic* than winter (this paper; &lt;a name=cite-johnsen2001demand&gt;&lt;/a&gt;&lt;a name=cite-hansen2004regional&gt;&lt;/a&gt;&lt;a name=cite-bye2008spot&gt;&lt;/a&gt;[Johnsen (2001)](http://dx.doi.org/10.1016/S0140-9883(00)00052-9); [Hansen (2004)](http://www.ssb.no/a/publikasjoner/pdf/DP/dp527.pdfhttp://www.ssb.no/a/english/publikasjoner/pdf/doc_200413_en/doc_200413_en.pdf); [Bye and Hansen (2008)](http://www.ssb.no/a/publikasjoner/pdf/DP/dp527.pdf)).
+
+### Implication 
+- Expect dominant firms to keep fuller reservoirs during summer (as they withhold production relative to competitive firms) and vice versa during winter.
 
 ???
 - Similar seasonal elasticity in other high-latitude countries, e.g. Canada (&lt;span style="color:#0c5999"&gt;Genc, 2016&lt;/span&gt;).
@@ -280,18 +286,24 @@ class: inverse, center, middle
 &lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
 
 ---
+name: data
 
 # Data
 
-- Daily time series data for the 500 largest reservoirs in Norway (2000-2013).
-  - Approximately 90% of the total system capacity.
-  - Daily data from 2000 to 2013. (2 million obs.)
-  - Matched to other important covariates, such as plant specifications, producer, weather, GIS info, etc.
-- &lt;span style="color:#BDBDBD"&gt;Electricity data over the same period.&lt;/span&gt;
-  - &lt;span style="color:#BDBDBD"&gt;Prices and flows per bidding area. (Link.)&lt;/span&gt;
-  - &lt;span style="color:#BDBDBD"&gt;Transmission constraints and boundary changes. (Link.)&lt;/span&gt;
-- &lt;span style="color:#BDBDBD"&gt;Electricity bid curve data from 2014-2017.&lt;/span&gt;
-  - &lt;span style="color:#BDBDBD"&gt;Direct estimates of seasonal elasticities.&lt;/span&gt;
+### Hydropower reservoirs (2000-2013)
+- Daily time series data for the 500 largest reservoirs in Norway (2 million obs).
+- Approximately 90% of the total system capacity.
+- Matched to other important covariates, such as plant ID, producer info, GIS, etc.
+
+### Electricity flows and prices (2000-2013)
+- Prices and flows per bidding area over the same period.
+- Transmission constraints and boundary changes. 
+
+### Electricity bid curves (2014-2017)
+- Allows for direct measurement of demand elasticities.
+
+### Weather (2000-2013)
+- Precipitation and temperature data as controls.
 
 ---
 
@@ -302,55 +314,25 @@ class: inverse, center, middle
 
 ---
 
-# Data (cont.)
-
-- Daily time series data for the 500 largest reservoirs in Norway (2000-2013).
-  - Approximately 90% of the total system capacity.
-  - Daily data from 2000 to 2013. (2 million obs.)
-  - Matched to other important covariates, such as plant specifications, producer, weather, GIS info, etc.
-- Electricity data over the same period.
-  - Prices and flows per bidding area. (Link.)
-  - Transmission constraints and boundary changes. (Link.)
-- &lt;span style="color:#BDBDBD"&gt;Electricity bid curve data from 2014-2017.&lt;/span&gt;
-  - &lt;span style="color:#BDBDBD"&gt;Direct estimates of seasonal elasticities.&lt;/span&gt;
-
-
----
-name: data
-
-# Data (cont.)
-
-- Daily time series data for the 500 largest reservoirs in Norway (2000-2013).
-  - Approximately 90% of the total system capacity.
-  - Daily data from 2000 to 2013. (2 million obs.)
-  - Matched to other important covariates, such as plant specifications, producer, weather, GIS info, etc.
-- Electricity data over the same period.
-  - Prices and flows per bidding area. 
-  - Transmission constraints and boundary changes. 
-- Electricity bid curve data from 2014-2017.
-  - Direct estimates of seasonal elasticities.
-
----
-
-# Elasticities (1)
+# Demand elasticities (1)
 
 &lt;img src="hydro-slides_files/figure-html/elasticities-1.png" width="748px" style="display: block; margin: auto;" /&gt;
 
 ---
 
-# Elasticities (1)
+# Demand elasticities (1)
 
 &lt;img src="hydro-slides_files/figure-html/elasticities_col-1.png" width="748px" style="display: block; margin: auto;" /&gt;
 
 ---
 
-# Elasticities (2)
+# Demand elasticities (2)
 
 &lt;img src="hydro-slides_files/figure-html/elasticities_q-1.png" width="748px" style="display: block; margin: auto;" /&gt;
 
 ---
 
-# Elasticities (3)
+# Demand elasticities (3)
 
 &lt;img src="hydro-slides_files/figure-html/elasticities_Q-1.png" width="748px" style="display: block; margin: auto;" /&gt;
 
@@ -367,20 +349,19 @@ name:identification1a
 
 # Identification
 
-Two layers of exogenous variation:
-1. Binding transmission constraints. (&lt;a href="http://driftsdata.statnett.no/Web/Map/snpscustom?language=en" target="_blank"&gt;Link&lt;/a&gt;. [Stills](#prices-flows-stills).)
-  - Exogeneity: Physical nature of electricity, geography.
-2. &lt;span style="color:#BDBDBD"&gt;Bidding area configuration (Link. Stills.)&lt;/span&gt;
-  - &lt;span style="color:#BDBDBD"&gt;Exogeneity: Maintenance, new regions, climate, geography.&lt;/span&gt;
+Two layers of exogenous variation...
 
-???
-- Following other studies (&lt;span style="color:#0c5999"&gt;Joskow and Tirole, 2000&lt;/span&gt;; &lt;span style="color:#0c5999"&gt;Borenstein et al., 2000&lt;/span&gt;; &lt;span style="color:#0c5999"&gt;Steen, 2004&lt;/span&gt;; &lt;span style="color:#0c5999"&gt;Mirza and Bergland, 2012&lt;/span&gt;), I focus on *local* market power that arises from transmission constraints between bidding areas.
-- However, my dataset allows me to go further by exploiting the exogenous changes in bidding areas that occur over time.
-    + Reservoirs are reassigned to a new bidding areas where the owner firms have more (or less) market power.
-- Control for potential problems that arise from changing demand by using zone and regime fixed effects.
+### 1. Transmission constraints. 
+- The ultimate mechanism for changes in market power. 
+- *Why* do firms gain/lose local market power?
+- Exogeneity: Physical nature of electricity, geography.
+
+### &lt;span style="color:#BDBDBD"&gt;2. Bidding area (re)configuration&lt;/span&gt;
+- &lt;span style="color:#BDBDBD"&gt;Adds richness by affecting the magnitude of change.&lt;/span&gt;
+- &lt;span style="color:#BDBDBD"&gt;*How much* market power do firms get?&lt;/span&gt;
+- &lt;span style="color:#BDBDBD"&gt;Exogeneity: Maintenance, new regions, climate, geography.&lt;/span&gt;
 
 ---
-
 # Layer 1: Transmission constraints
 
 &lt;!-- 
@@ -411,6 +392,8 @@ https://collaboration133.com/how-to-scale-iframe-content-in-ie-chrome-firefox-an
 
 &lt;div id="wrapper"&gt;&lt;iframe id="scaled-frame" src="http://driftsdata.statnett.no/Web/Map/snpscustom?language=en"&gt;&lt;/iframe&gt;&lt;/div&gt;
 
+&lt;a href="http://driftsdata.statnett.no/Web/Map/snpscustom?language=en" target="_blank"&gt;Link&lt;/a&gt;. [Stills](#prices-flows-stills).
+
 ---
 
 # Layer 1: Transmission constraints
@@ -422,17 +405,17 @@ name:identification1b
 
 # Identification
 
-Two layers of exogenous variation:
-1. Binding transmission constraints. (&lt;a href="http://driftsdata.statnett.no/Web/Map/snpscustom?language=en" target="_blank"&gt;Link&lt;/a&gt;. [Stills](#prices-flows-stills).)
-  - Exogeneity: Physical nature of electricity, geography.
-2. Bidding area configuration (&lt;a href="http://www.statnett.no/en/Market-and-operations/the-power-market/" target="_blank"&gt;Link&lt;/a&gt;. [Stills](#config-stills).)
-  - Exogeneity: Maintenance, new regions, climate, geography.
+### Two layers of exogenous variation
+  
+### &lt;span style="color:#BDBDBD"&gt;1. Transmission constraints.&lt;/span&gt;
+- &lt;span style="color:#BDBDBD"&gt;The ultimate mechanism for changes in market power.&lt;/span&gt;
+- &lt;span style="color:#BDBDBD"&gt;*Why* do firms gain/lose local market power?&lt;/span&gt;
+- &lt;span style="color:#BDBDBD"&gt;Exogeneity: Physical nature of electricity, geography.&lt;/span&gt;
 
-???
-- Following other studies (&lt;span style="color:#0c5999"&gt;Joskow and Tirole, 2000&lt;/span&gt;; &lt;span style="color:#0c5999"&gt;Borenstein et al., 2000&lt;/span&gt;; &lt;span style="color:#0c5999"&gt;Steen, 2004&lt;/span&gt;; &lt;span style="color:#0c5999"&gt;Mirza and Bergland, 2012&lt;/span&gt;), I focus on *local* market power that arises from transmission constraints between bidding areas.
-- However, my dataset allows me to go further by exploiting the exogenous changes in bidding areas that occur over time.
-    + Reservoirs are reassigned to a new bidding areas where the owner firms have more (or less) market power.
-- Control for potential problems that arise from changing demand by using zone and regime fixed effects.
+### 2. Bidding area (re)configuration
+- Adds richness by affecting the [magnitude](#variation) of change.
+- *How much* market power do firms get?
+- Exogeneity: Maintenance, new regions, climate, geography.
 
 ---
 
@@ -466,14 +449,29 @@ https://collaboration133.com/how-to-scale-iframe-content-in-ie-chrome-firefox-an
 &lt;div id="wrapper"&gt;&lt;iframe id="scaled-frame" src="http://www.statnett.no/en/Market-and-operations/the-power-market/"&gt;&lt;/iframe&gt;&lt;/div&gt;
 --&gt;
 
+&lt;a href="http://www.statnett.no/en/Market-and-operations/the-power-market/" target="_blank"&gt;Link&lt;/a&gt;. [Stills](#config-stills).
+
 ---
 name:identification2
 
-# Identification (cont.)
+# Identification
 
-- Layer 1 is the ultimate mechanism for changes in market power. (**When** do firms gain/lose local market power?)
-- Layer 2 adds richness by affecting the [magnitude](#variation) of this change. (**How much** market power do they get?)
-- Allows me to trace out the response of individual plants at *varying* levels of market power.
+### Two layers of exogenous variation
+  
+### 1. Transmission constraints.&lt;/span&gt;
+- The ultimate mechanism for changes in market power.
+- *Why* do firms gain/lose local market power?
+- Exogeneity: Physical nature of electricity, geography.
+
+### 2. Bidding area (re)configuration
+- Adds richness by affecting the [magnitude](#variation) of change.
+- *How much* market power do firms get?
+- Exogeneity: Maintenance, new regions, climate, geography.
+
+--
+count: false
+
+Together, these layers allow me to trace out the response of individual plants at *varying* levels of market power.
 
 ???
 - Following other studies (&lt;span style="color:#0c5999"&gt;Joskow and Tirole, 2000&lt;/span&gt;; &lt;span style="color:#0c5999"&gt;Borenstein et al., 2000&lt;/span&gt;; &lt;span style="color:#0c5999"&gt;Steen, 2004&lt;/span&gt;; &lt;span style="color:#0c5999"&gt;Mirza and Bergland, 2012&lt;/span&gt;), I focus on *local* market power that arises from transmission constraints between bidding areas.
@@ -486,17 +484,17 @@ name:identification2
 # Stylised example, revisited
 
 .pull-left[
-**Regime 1: Not binding**
+### Regime 1: Not binding
+&lt;span style="color:#729dce"&gt;&lt;b&gt;Blue:&lt;/b&gt;&lt;/span&gt; 60% &lt;/br&gt;
+&lt;span style="color:#ff6665"&gt;&lt;b&gt;Red:&lt;/b&gt;&lt;/span&gt; 40%
 ![](pics/toy.png)
-- &lt;span style="color:#729dce"&gt;&lt;b&gt;Blue:&lt;/b&gt;&lt;/span&gt; 60% 
-- &lt;span style="color:#ff6665"&gt;&lt;b&gt;Red:&lt;/b&gt;&lt;/span&gt; 40%
 ]
 
 .pull-right[
-**Regime 2: Not binding**
+### Regime 2: Not binding
+&lt;span style="color:#729dce"&gt;&lt;b&gt;Blue:&lt;/b&gt;&lt;/span&gt; 60% &lt;/br&gt;
+&lt;span style="color:#ff6665"&gt;&lt;b&gt;Red:&lt;/b&gt;&lt;/span&gt; 40%
 ![](pics/toy.png)
-- &lt;span style="color:#729dce"&gt;&lt;b&gt;Blue:&lt;/b&gt;&lt;/span&gt; 60% 
-- &lt;span style="color:#ff6665"&gt;&lt;b&gt;Red:&lt;/b&gt;&lt;/span&gt; 40% 
 ]
 
 ---
@@ -504,17 +502,17 @@ name:identification2
 # Stylised example, revisited
 
 .pull-left[
-**Regime 1: Binding**
+### Regime 1: Binding
+&lt;span style="color:#729dce"&gt;&lt;b&gt;Blue&lt;/b&gt;&lt;/span&gt; 100% `\((\uparrow)\)` &amp; 33% `\((\downarrow)\)` &lt;/br&gt;
+&lt;span style="color:#ff6665"&gt;&lt;b&gt;Red:&lt;/b&gt;&lt;/span&gt; 67% `\((\uparrow)\)`
 ![](pics/toy1a.png)
-- &lt;span style="color:#729dce"&gt;&lt;b&gt;Blue&lt;/b&gt;&lt;/span&gt; 100% `\((\uparrow)\)` &amp; 33% `\((\downarrow)\)`
-- &lt;span style="color:#ff6665"&gt;&lt;b&gt;Red:&lt;/b&gt;&lt;/span&gt; 67% `\((\uparrow)\)`
 ]
 
 .pull-right[
-**Regime 2: Binding**
+### Regime 2: Binding
+&lt;span style="color:#729dce"&gt;&lt;b&gt;Blue:&lt;/b&gt;&lt;/span&gt; 67% `\((\uparrow)\)` &amp; 50% `\((\downarrow)\)` &lt;/br&gt;
+&lt;span style="color:#ff6665"&gt;&lt;b&gt;Red:&lt;/b&gt;&lt;/span&gt; 33% `\((\downarrow\)`) &amp; 50% `\((\uparrow)\)`
 ![](pics/toy2a.png)
-- &lt;span style="color:#729dce"&gt;&lt;b&gt;Blue:&lt;/b&gt;&lt;/span&gt; 67% `\((\uparrow)\)` &amp; 50% `\((\downarrow)\)`
-- &lt;span style="color:#ff6665"&gt;&lt;b&gt;Red:&lt;/b&gt;&lt;/span&gt; 33% `\((\downarrow\)`) &amp; 50% `\((\uparrow)\)`
 ]
 
 ---
@@ -522,17 +520,17 @@ name:identification2
 # Stylised example, revisited
 
 .pull-left[
-**Regime 1: Binding**
+### Regime 1: Binding
+&lt;span style="color:#BDBDBD"&gt;&lt;b&gt;Blue&lt;/b&gt; 100% `\((\uparrow)\)` &amp; 33% `\((\downarrow)\)`&lt;/span&gt;&lt;/br&gt;
+&lt;span style="color:#ff6665"&gt;&lt;b&gt;Red:&lt;/b&gt;&lt;/span&gt; 67% `\((\uparrow)\)`
 ![](pics/toy1a_gs.png)
-- &lt;span style="color:#BDBDBD"&gt;&lt;b&gt;Blue&lt;/b&gt; 100% `\((\uparrow)\)` &amp; 33% `\((\downarrow)\)`&lt;/span&gt;
-- &lt;span style="color:#ff6665"&gt;&lt;b&gt;Red:&lt;/b&gt;&lt;/span&gt; 67% `\((\uparrow)\)`
 ]
 
 .pull-right[
-**Regime 2: Binding**
+### Regime 2: Binding
+&lt;span style="color:#BDBDBD"&gt;&lt;b&gt;Blue:&lt;/b&gt; 67% `\((\uparrow)\)` &amp; 50% `\((\downarrow)\)`&lt;/span&gt;&lt;/br&gt;
+&lt;span style="color:#ff6665"&gt;&lt;b&gt;Red:&lt;/b&gt;&lt;/span&gt; 33% `\((\downarrow)\)` &lt;span style="color:#BDBDBD"&gt;&amp; 50% `\((\uparrow)\)`&lt;/span&gt;
 ![](pics/toy2a_gs.png)
-- &lt;span style="color:#BDBDBD"&gt;&lt;b&gt;Blue:&lt;/b&gt; 67% `\((\uparrow)\)` &amp; 50% `\((\downarrow)\)`&lt;/span&gt;
-- &lt;span style="color:#ff6665"&gt;&lt;b&gt;Red:&lt;/b&gt;&lt;/span&gt; 33% `\((\downarrow)\)` &amp; 50% `\((\uparrow)\)`
 ]
 
 ---
@@ -543,20 +541,12 @@ name:identification2
   MathJax.Hub.Config({ TeX: { extensions: ["color.js"] }});
 &lt;/script&gt;
 
-
-`$$\begin{aligned} \begin{split}	V_{it} = \sum_{m = 1}^{12}&amp;{\beta_m M_{mt}} + \sum_{m = 1}^{12}{\gamma_m M_{mt} \cdot S_{it, f(it)}} + \\	&amp;\sum_{f = 1}^{57}\psi_r{F_{ft}} + \sum_{r = 1}^{17}\delta_r{R_{rt}} + \sum_{z = 1}^{23}\eta_z{Z_{zt}} + \mathbf{X \beta_X} + a_i + v_{it}, \label{eq:reg2a} \end{split} \end{aligned}$$`
-&lt;small&gt;
-- `\(i\)` reservoir
-- `\(f\)` firm
-- `\(t\)` time (day)
+`$$V_{it} = \sum_{m = 1}^{12}{\beta_m M_{mt}} + \sum_{m = 1}^{12}{\gamma_m M_{mt} \cdot S_{it, f(it)}} + \mathbf{X \beta_X} + a_i + v_{it}, \label{eq:reg2a}$$`
+where, for reservoir `\(i\)` belonging to firm `\(f\)` on day `\(t\)`,
 - `\(V\)` is reservoir volume (% of max regulated capacity)
 - `\(M_m\)` is set of month dummies
 - `\(S\)` is the local market share of firm `\(f\)`
-- `\(F_{f}\)` are firm fixed effects
-- `\(R_r\)` are regime fixed effects
-- `\(Z_z\)` are zone fixed effects
-- `\(\mathbf{X}\)` are a set of additional controls (temperature, rainfall, plant FEs, etc.)
-&lt;/small&gt;
+- `\(\mathbf{X}\)` are a set of additional controls: temperature &amp; precipitation; plant, firm, regime &amp; zone fixed effects, etc.)
 
 ???
 - Estimate water volumes in reservoir `\(i\)` `\((i,...,N)\)`, belonging to hydropower firm `\(f\)` `\((f = 1,...,F)\)`, at time `\(t\)` `\((t = 1,...,T)\)`. 
@@ -569,12 +559,13 @@ name:identification2
 
 # Regression equation (cont.)
 
-`$$\begin{aligned} \begin{split}	V_{it} = \sum_{m = 1}^{12}&amp;{\beta_m M_{mt}} + \sum_{m = 1}^{12}{{\color{red}\gamma_m} M_{mt} \cdot S_{it, f(it)}} + \\ &amp;\sum_{f = 1}^{57}\psi_r{F_{ft}} + \sum_{r = 1}^{17}\delta_r{R_{rt}} + \sum_{z = 1}^{23}\eta_z{Z_{zt}} + \mathbf{X \beta_X} + a_i + v_{it}, \label{eq:reg2b} \end{split} \end{aligned}$$`
+`$$V_{it} = \sum_{m = 1}^{12}{\beta_m M_{mt}} + \sum_{m = 1}^{12}{{\color{red}\gamma_m} M_{mt} \cdot S_{it, f(it)}} + \mathbf{X \beta_X} + a_i + v_{it}, \label{eq:reg2b}$$`
 
 Primarily interested in the `\(\color{red}\gamma_m\)` parameters on the interacted market share variable.
-- Based on theory and empirical demand elasticity estimates, expect the sign to vary by season:
-  - `\(\gamma_m&gt;0\)` in summer
-  - `\(\gamma_m&lt;0\)` in winter
+
+Based on theory and empirical demand elasticity estimates, expect the sign to vary by season:
+- `\(\gamma_m&gt;0\)` in summer
+- `\(\gamma_m&lt;0\)` in winter
 
 ---
 
@@ -583,6 +574,12 @@ class: inverse, center, middle
 # Results
 
 &lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=720px&gt;&lt;/html&gt; 
+
+---
+
+# (Remember our stylised prediction)
+
+&lt;img src="hydro-slides_files/figure-html/elasticities_Q_repeat-1.png" width="748px" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -622,7 +619,7 @@ class: inverse, center, middle
 - Numerous reasons to view these results as a lower bound on the welfare costs associated with market power.
 
 ### Policy relevance
-- Even seemingly competitive markets are susceptible to manipulation and welfare losses.
+- Even "competitive" markets are susceptible to manipulation and welfare losses.
 - Hydro producers may not fully accommodate intermittent renewables like wind. Though, could also ameliorate impacts of market power. (Follow-up study.)
 
 ???
