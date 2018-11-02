@@ -659,14 +659,15 @@ constrained %>%
   scale_x_continuous(labels = scales::percent) +
   scale_y_continuous(labels = scales::percent) +
   labs(
-    x = "Daily transmission constraint severity", 
+    title = "How often are constraints binding?",
+    x = "Fraction of daily constrained hours", 
     y = "Density"#,
     # caption = expression(italic("Note: Expressed as a percentage of total daily operating hours"))
     ) +
   facet_wrap(~impexp) +
   theme(
-    panel.grid.major = element_line(colour = "grey90", size = 0.5),
-    axis.title.x = element_blank()
+    panel.grid.major = element_line(colour = "grey90", size = 0.5)#,
+    # axis.title.x = element_blank()
     )  
 ```
 
@@ -1013,12 +1014,16 @@ class: inverse, center, middle
 
 # Conclusions
 
-- I exploit exogenous variation in market power among Norwegian electricity firms (source: transmission constraints).
-- Pair this variation with a rich dataset of Norwegian hydropower firms and electricity flows.
+### Approach
+
+- Exploit exogenous variation in localized electricity markets (source: transmission constraints).
+- Pair with a rich dataset of Norwegian hydropower firms and electricity flows.
+
+### Results
 - Empirical results closely match the predictions of theory.
-- Market power induces a modest, but definitive pattern of resource shifting.
-    + 1% $\uparrow$ in local market share leads to 0.1 $-$ 0.3% $\uparrow$ $(\downarrow)$ in reservoir volumes during summer (winter).
-- Numerous reasons to view these results as a lower bound on the welfare costs associated with market power.
+- 1% $\uparrow$ in local market share leads to $\pm$ 0.3% $\uparrow$ in reservoir volumes.
+   - Opposite effect in winter.
+- Numerous reasons to view these results as a lower bound.
 
 ### Policy relevance
 - Even "competitive" markets are susceptible to manipulation and welfare losses.
@@ -1042,6 +1047,7 @@ background-size: 100% 50%
 .right[
 <i class="fa fa-globe"></i> <a href="http://www.grantmcdermott.com" target="_blank">www.grantmcdermott.com</a></br>
 <i class="fa fa-envelope-square"></i> <a href="mailto:grantmcd@uoregon.edu" target="_blank">grantmcd@uoregon.edu</a></br>
+<i class="fa fa-twitter-square"></i> <a href="https://twitter.com/grant_mcdermott" target="_blank">@grant_mcdermott</a></br>
 ]
 
 ---
@@ -1059,15 +1065,10 @@ name: monopolist
 
 # Monopolist's problem
 
-- Consider the simplest theoretical case: 
-- Hydropower monopoly in two-period model (summer and winter)
+Consider the simplest theoretical case: Hydropower monopoly in two-period model (summer and winter).
 - No uncertainty, reservoir limits or trade
-- Production in each period will then depend on relative elasticities of demand...
 
----
-count: false
-
-# Monopoly (cont.)
+Monopolist maximizes revenue subject to her water endowment.
 
 $$\max \sum^2_{t=1} p_t \left( q_t \right) \cdot q_t$$
 s.t. 
@@ -1087,11 +1088,7 @@ $$\begin{aligned} \frac{\partial L}{\partial q_t} = {p_{t}} ' \left( q_t \right)
 and
 
 $$\begin{aligned} \lambda & \geq 0 \\ (	& = 0 \text{ for } \sum^2_{t=1} q_t < W ) \end{aligned}$$
-
----
-count: false
-
-# Monopoly (cont.)
+Rearranging gives:
 
 $$
 p_1 \left( q_1 \right) \left( 1 + \frac{1}{\epsilon_1} \right) = p_2 \left( q_2 \right) \left( 1 + \frac{1}{\epsilon_2} \right) = \lambda,
@@ -1099,7 +1096,13 @@ $$
 
 where $\epsilon_t = \frac{p_t}{q_t}\frac{\partial q_t}{\partial p_t} < 0$ is the price elasticity of demand. 
 
-- Prices and quantities depend on the relative demand elasticities in each period. E.g:
+
+---
+count: false
+
+# Monopoly (cont.)
+
+Summary: Prices and quantities depend on the relative demand elasticities in each period. E.g:
 
 $$
 	p_1 \left( q_1 \right) > p_2 \left( q_2\right) \text{ }\text{ }\text{ if }\text{ }\text{ } \left| \epsilon_1 \left( q_1 \right) \right| < \left| \epsilon_2 \left( q_2 \right) \right| .
